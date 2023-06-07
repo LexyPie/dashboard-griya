@@ -126,6 +126,7 @@ import Selling from "./components/Properties/Selling";
 import Renting from "./components/Properties/Renting";
 import CrossCheck from "./components/Properties/CrossCheck";
 import Deals from "./components/Properties/Deals";
+import NewPropertyForm from "./components/Properties/NewPropertyForm/NewPropertyForm";
 
 import AgencyHome from "./components/Agency/AgencyHome";
 import AgencyLog from "./components/Agency/AgencyLog";
@@ -149,6 +150,7 @@ const Markup = () => {
     { url: "affitto", component: <Renting/> },
     { url: "incrocia", component: <CrossCheck/> },
     { url: "trattative", component: <Deals/> },
+    { url: "nuovo-immobile", component: <NewPropertyForm/> },
     ///Agency
     { url: "agenzia", component: <AgencyHome/> },
     { url: "storico", component: <AgencyLog/> },

@@ -52,7 +52,7 @@ export default function PropertiesHome() {
       <div className="row">
       <div className="col-xl-12">
 					<div className="d-flex flex-wrap">
-						<Link to={"#"} className="btn btn-primary me-3 mb-3">+New Tranasactions</Link>
+						<Link to={"/nuovo-immobile"} className="btn btn-primary me-3 mb-3">+ Aggiungi nuovo immobile</Link>
 						<div className="table-search mb-3 pe-3">	
 							<div className="input-group search-area">
 								<input type="text" className="form-control" placeholder="Search customer name here" />
