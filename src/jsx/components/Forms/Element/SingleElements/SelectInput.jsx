@@ -1,22 +1,20 @@
 import React from 'react'
 
-export default function SelectInput(props) {
+export default function SelectInput({label,options,defaultValue,id}) {
+
     return (
         <>
-            <label>{props.label}:</label>
+            <label>{label}</label>
             <select
-                defaultValue={props.defaultValue}
-                className={`${props.className} form-control mb-4`}
-                id={props.id}
+                defaultValue={defaultValue}
+                className={`form-control mb-4`}
+                id={id}
             >
-            {/* 
-            {options.map((item,i) => {
-                <option value={item.id} key={i}>{item.name}</option>
-            })} */}
-                
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>              
+                <option value="">Scegli un'opzione...</option>
+            {options.map((item, i) =>
+                (
+                    <option value={item.id} key={i}>{item.name}</option>
+                ))}
                 
             </select>
         </>

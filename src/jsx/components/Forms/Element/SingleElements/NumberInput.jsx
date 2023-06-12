@@ -6,7 +6,7 @@ export default function NumberInput(props) {
     <label>{props.label}</label>
     <input
         type="number"
-        className={`${props.className} form-control mb-4`}
+        className={`form-control mb-4 ${props.className}`}
         placeholder={props.placeholder}
         name={props.name}
     />

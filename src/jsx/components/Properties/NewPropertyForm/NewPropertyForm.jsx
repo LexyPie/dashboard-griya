@@ -21,7 +21,7 @@ export default function NewPropertyForm() {
 				<form onSubmit={(e) => e.preventDefault()}>
 
 					<div className="form-wizard ">
-						<Stepper className="nav-wizard" activeStep={goSteps} label={true}>
+						<Stepper className="nav-wizard" activeStep={goSteps}>
 							<Step label="Dati Agenzia" className="nav-link" onClick={() => setGoSteps(0)} />
 							<Step label="Dati Catastali" className="nav-link" onClick={() => setGoSteps(1)} />
 							<Step label="Ubicazione" className="nav-link" onClick={() => setGoSteps(2)} />
