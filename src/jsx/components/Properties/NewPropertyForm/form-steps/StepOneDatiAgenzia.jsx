@@ -4,8 +4,12 @@ import TextInput from '../../../Forms/Element/SingleElements/TextInput';
 import SelectInput from '../../../Forms/Element/SingleElements/SelectInput';
 import RadioInlineInput from '../../../Forms/Element/SingleElements/RadioInlineInput';
 import Datepicker from '../../../Forms/Element/SingleElements/Datepicker';
+import CheckboxInlineInput from '../../../Forms/Element/SingleElements/CheckboxInlineInput';
+import MultipleInput from '../../../Forms/Element/SingleElements/MultipleInput';
 
 export default function StepOneDatiAgenzia() {
+
+
     return (
         <>
             {/* Referenze section */}
@@ -14,7 +18,7 @@ export default function StepOneDatiAgenzia() {
                     <h4 className="card-title">Riferimenti</h4>
                 </div>
                 <div className="row card-body">
-                    <div className="col-sm-6 border border-top-0 border-right-0 border-bottom-0 border-2 border-primary">
+                    <div className="col-sm-6 px-4">
                         <TextInput label="Nome immobile" placeholder="inserire nome immobile" />
                         <div class="row form-group">
                             <div className='col-6 mt-2 mt-sm-0'>
@@ -25,7 +29,7 @@ export default function StepOneDatiAgenzia() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-6 mt-2 mt-sm-0 border border-top-0 border-right-0 border-bottom-0 border-2 border-primary">
+                    <div className="col-sm-6 mt-2 mt-sm-0 px-4">
                         <SelectInput label="Agenzia" defaultValue="" id="agenzia" />
                         <SelectInput label="Agente" defaultValue="" id="agente" />
                         <SelectInput label="Collaboratore" defaultValue="" id="collaboratore" />
@@ -34,8 +38,8 @@ export default function StepOneDatiAgenzia() {
                         <h5 className='me-3'>Condividi con:</h5>
                         <div className="form-group mb-0">
                             <RadioInlineInput name="condivisione" text="Tutti" />
-                            <RadioInlineInput name="condivisione" text="Solo Agenti" />
-                            <RadioInlineInput name="condivisione" text="Solo Collaboratori" />
+                            <RadioInlineInput name="condivisione" text="Solo la mia Agenzia" />
+                            <RadioInlineInput name="condivisione" text="Nessuno" />
                         </div>
                     </div>
                 </div>
@@ -46,7 +50,7 @@ export default function StepOneDatiAgenzia() {
                     <h4 className="card-title">Incarico</h4>
                 </div>
                 <div className="row card-body">
-                    <div className="col-sm-6 border border-top-0 border-right-0 border-bottom-0 border-2 border-primary">
+                    <div className="col-sm-6 px-4">
                         <h5 className='me-3'>Categoria:</h5>
                         <div className="form-group mb-0">
                             <RadioInlineInput name="categoria" text="In vendita" />
@@ -56,7 +60,7 @@ export default function StepOneDatiAgenzia() {
                         <SelectInput label="Tipo di proprietà" defaultValue="" id="proprietà" />
                         <SelectInput label="Stato di occupazione" defaultValue="" id="collaboratore" />
                     </div>
-                    <div className="col-sm-6 mt-2 mt-sm-0 border border-top-0 border-right-0 border-bottom-0 border-2 border-primary">
+                    <div className="col-sm-6 mt-2 mt-sm-0 px-4">
                         <SelectInput label="Tipo di incarico" defaultValue="" id="incarico" />
                         <div class="row form-group">
                             <div className='col-6 mt-2 mt-sm-0'>
@@ -69,10 +73,12 @@ export default function StepOneDatiAgenzia() {
                             </div>
                         </div>
                         <div className="form-group mb-0">
-                            <RadioInlineInput name="info-incarico" text="Esclusiva" />
-                            <RadioInlineInput name="info-incarico" text="Rinnovo" />
-                            <RadioInlineInput name="info-incarico" text="Tacito rinnovo" />
-                            <RadioInlineInput name="info-incarico" text="Incarico particolare" />
+                            <CheckboxInlineInput label="Incarico particolare" value="incarico-particolare"/>
+                            <CheckboxInlineInput label="Esclusiva" value="esclusiva"/>
+                            <CheckboxInlineInput label="Rinnovo" value="rinnovo"/>
+                            <CheckboxInlineInput label="Tacito rinnovo" value="tacito-rinnovo"/>
+                            <CheckboxInlineInput label="Con collaborazioni" value="collaborazioni"/>
+                            
                         </div>
                     </div>
                 </div>
