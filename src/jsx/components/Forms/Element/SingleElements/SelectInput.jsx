@@ -1,13 +1,13 @@
 import React from 'react'
 
-export default function SelectInput({label,options,defaultValue,id}) {
+export default function SelectInput({label,options,defaultValue,id,className}) {
 
     return (
         <>
             <label>{label}</label>
             <select
                 defaultValue={defaultValue}
-                className={`form-control mb-4`}
+                className={`${className} form-control`}
                 id={id}
             >
                 <option value="">Scegli un'opzione...</option>

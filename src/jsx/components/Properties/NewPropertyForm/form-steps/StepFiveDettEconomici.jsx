@@ -16,6 +16,8 @@ export default function StepFiveDettEconomici() {
                 <div className="row card-body">
                     {/* Column 1 */}
                     <div className="col-sm-6 px-4">
+
+                    <h5 className='text-uppercase'>Unità catastale n.1</h5>
                         <div className='row form-group'>
                             <div className='col-6  mt-2 mt-sm-0'>
                                 <InputGroupSufx label="Prezzo" type="number" suffix="€" />

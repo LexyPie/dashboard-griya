@@ -259,7 +259,7 @@ const UiButton = () => {
               </Card.Header>
               <div className="card-body">
                 <Button className="me-2" variant="primary">
-                  Add to cart{" "}
+                  Add to cart{""}
                   <span className="btn-icon-end">
                     <i className="fa fa-shopping-cart" />
                   </span>
