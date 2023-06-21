@@ -161,7 +161,7 @@ export default function StepThreeUbicazione() {
                         <div className="form-group mb-3">
                             <RadioInlineInput name="lati-liberi" text="Uno" />
                             <RadioInlineInput name="lati-liberi" text="Due - ad angolo" />
-                            <RadioInlineInput name="lati-liberi" text="Due - ad angolo" />
+                            <RadioInlineInput name="lati-liberi" text="Due - paralleli" />
                             <RadioInlineInput name="lati-liberi" text="Tre" />
                             <RadioInlineInput name="lati-liberi" text="Quattro" />
                         </div>

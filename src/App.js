@@ -16,7 +16,7 @@ const SignUp = lazy(() => import('./jsx/pages/Registration'));
 const ForgotPassword = lazy(() => import('./jsx/pages/ForgotPassword'));
 const Login = lazy(() => {
     return new Promise(resolve => {
-    setTimeout(() => resolve(import('./jsx/pages/Login')), 500);
+    setTimeout(() => resolve(import('./jsx/pages/Login')), 10000);
   });
 });
 

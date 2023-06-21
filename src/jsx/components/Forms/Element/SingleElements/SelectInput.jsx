@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SelectInput({label,options,defaultValue,id,className}) {
+export default function SelectInput({label,options,defaultValue,id,className,onChange}) {
 
     return (
         <>
@@ -9,6 +9,7 @@ export default function SelectInput({label,options,defaultValue,id,className}) {
                 defaultValue={defaultValue}
                 className={`${className} form-control`}
                 id={id}
+                onChange={onChange}
             >
                 <option value="">Scegli un'opzione...</option>
             {options.map((item, i) =>
