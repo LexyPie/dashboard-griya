@@ -7,7 +7,7 @@ import MultipleInput from '../../../Forms/Element/SingleElements/MultipleInput';
 import CheckboxInlineInput from '../../../Forms/Element/SingleElements/CheckboxInlineInput';
 import MultiSelectInput from '../../../Forms/Element/SingleElements/MultiSelectInput';
 import WorldMap from '../../../PluginsMenu/JqvMap/WorldMap';
-import MultipleInputWithSelect from './MultipleInputWithSelect';
+import MultipleInputWithSelect from '../../../Forms/Element/SingleElements/MultipleInputWithSelect';
 import NumberInput from '../../../Forms/Element/SingleElements/NumberInput';
 import RadioInlineInput from '../../../Forms/Element/SingleElements/RadioInlineInput';
 

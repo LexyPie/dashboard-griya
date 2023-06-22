@@ -6,7 +6,15 @@ import InputGroupSufx from '../../../Forms/Element/SingleElements/InputGroupSufx
 import TextAreaInput from '../../../Forms/Element/SingleElements/TextAreaInput';
 import NumberInput from '../../../Forms/Element/SingleElements/NumberInput';
 import MultiSelectInput from '../../../Forms/Element/SingleElements/MultiSelectInput';
+import Datepicker from '../../../Forms/Element/SingleElements/Datepicker';
+import CheckboxInlineInput from '../../../Forms/Element/SingleElements/CheckboxInlineInput';
+
 import SurfaceCalculator from './SurfaceCalculator';
+import { Button, Accordion } from 'react-bootstrap';
+import SliderRatingSatisfaction from '../../../Forms/Element/SingleElements/SliderRatingSatisfaction';
+import VerticalTab from '../../../Forms/Element/SingleElements/VerticalTab';
+
+import { other_caratArray } from './partials/other-carat-componenents/other_caratObj';
 
 export default function StepFourCaratteristiche() {
 
@@ -79,6 +87,25 @@ export default function StepFourCaratteristiche() {
         { id: '5', name: 'Industriale' },
         { id: '6', name: 'Industriale - Artigianale' }
     ];
+
+    const classeEnergeticaArray = [
+        { id: '1', name: 'A4' },
+        { id: '2', name: 'A3' },
+        { id: '3', name: 'A2' },
+        { id: '4', name: 'A1' },
+        { id: '5', name: 'A+' },
+        { id: '6', name: 'A' },
+        { id: '7', name: 'B' },
+        { id: '8', name: 'C' },
+        { id: '9', name: 'D' },
+        { id: '10', name: 'E' },
+        { id: '11', name: 'F' },
+        { id: '12', name: 'G' },
+        { id: 'NA', name: 'Non applicabile' },
+        { id: 'ND', name: 'Non dichiarata' },
+        { id: 'VA', name: 'In fase di valutazione' }
+    ];
+
 
     const [isTypeCarat, setTypeCarat] = useState({ tipologia: false, value: 0 });
 
@@ -178,7 +205,6 @@ export default function StepFourCaratteristiche() {
                                 <SelectInput label="Classificazione" options={classificazioneArray} defaultValue="" id="classificazione" className="mb-3" />
                             </div>
                             <div className='col-6 mt-2 mt-sm-0'>
-
                                 <MultiSelectInput label="Condizioni" options={condizioniArray} id="condizioni" className="mb-3" />
                             </div>
                             <div className='col-12 mt-2 mt-sm-0'>
@@ -194,11 +220,76 @@ export default function StepFourCaratteristiche() {
                     <h4 className="card-title">Calcolo superfici</h4>
                 </div>
                 <div className="row card-body">
-                <div className="col-sm-12 px-4">
-                    <SurfaceCalculator/>
+                    <div className="col-sm-12 px-4">
+                        <SurfaceCalculator />
+                    </div>
+                    <Button className="m-3 px-4" variant="primary">
+                        + Aggiungi altra superficie
+                    </Button>
                 </div>
+
+                <div className="col-sm-12 p-4 border border-1 border-top">
+                    <h5>Totale superficie principale: mq</h5>
+                    <h5>Totale superficie commerciale: mq</h5>
+                </div>
+
+            </div>
+
+            {/* Prestazione energetica  section */}
+            <div className='card'>
+                <div className="card-header">
+                    <h4 className="card-title">Prestazione energetica</h4>
+                </div>
+                <div className="row card-body">
+                    <div className="col-sm-2 px-4">
+                        <SelectInput label="Classe energetica" options={classeEnergeticaArray} defaultValue="" id="classe-energetica" className="mb-3" />
+                    </div>
+                    <div className="col-sm-3 px-4">
+                        <InputGroupSufx label="EPgl, nren (ex IPE)" type="number" suffix="kWh/mq anno" />
+                    </div>
+                    <div className="col-sm-3 px-4">
+                        <InputGroupSufx label="EPgl, ren" type="number" suffix="kWh/mq anno" />
+                    </div>
+                    <div className="col-sm-2 px-4">
+                        <label className="active" for="dateStandard">Data certificato</label>
+                        <Datepicker name="data-certificato-energetico" id="data-certificato-energetico" />
+                    </div>
+                    <div className="col-sm-2 px-4">
+                        <CheckboxInlineInput label="Energia quasi a zero" value="zero-energy" />
+                    </div>
+                    <div className="col-sm-12 px-4 mt-3">
+                        <h5>Prestazione energetica durante l'anno:</h5>
+                        <div className='row form-group'>
+                            <div className="col-sm-6 p-5 my-3 card ">
+                                <h4 className='text-uppercase text-center mb-3'>
+                                    <i className="fas fa-snowflake mx-2" />
+                                    Inverno
+                                </h4>
+                                <SliderRatingSatisfaction />
+                            </div>
+                            <div className="col-sm-6 p-5 my-3 card ">
+                                <h4 className='text-uppercase text-center mb-3'>
+                                    <i className="fas fa-sun mx-2" />
+                                    Estate
+                                </h4>
+                                <SliderRatingSatisfaction />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            {/* Caratteristiche altre */}
+            <div className='card'>
+                <div className="card-header">
+                    <h4 className="card-title">Altre caratteristiche</h4>
+                </div>
+                <div className="row card-body">
+                    <VerticalTab tabData={other_caratArray}/>
+                    </div>
+                </div>
+            
+
             {/* Finiture  section */}
             <div className='card'>
                 <div className="card-header">
