@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export default function CheckboxInlineInput({value, name, label, onChange}) {
+export default function CheckboxInput({value, name, label, onChange, checkDisplay}) {
 
   const [isChecked,setIsChecked] = useState({check:false,value:0});
 
@@ -19,11 +19,11 @@ export default function CheckboxInlineInput({value, name, label, onChange}) {
 
   return (
     <>
-      <div className="form-check form-check-inline">
+      <div className={`form-check ${checkDisplay}`}>
         <label className="form-check-label">
           <input
             type="checkbox"
-            className="form-check-input"
+            className="form-check-input me-2"
             value={value}
             name={value}
             onClick={handleIsChecked}

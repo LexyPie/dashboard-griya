@@ -1,28 +1,33 @@
+import CaratImpianti from "./CaratImpianti";
+import CaratEsterne from "./CaratEsterne";
 import CaratInterne from "./CaratInterne";
+import CaratUtenze from "./CaratUtenze";
+import CaratPrestigio from "./CaratPrestigio";
+import CaratAnnessioni from "./CaratAnnessioni";
 
 export const other_caratArray = [
     {
         name: "Caratteristiche interne",
-        content:<CaratInterne/>,
+        content:<CaratInterne/>
       },
       {
         name: "Caratteristiche esterne",
-        content:'',
+        content:<CaratEsterne/>
       },
       {
         name: "Caratteristiche impianti",
-        content:'',
+        content:<CaratImpianti/>
       },
       {
         name: "Allacciamento utenze",
-        content:'',
+        content:<CaratUtenze/>
       },
       {
         name: "Caratteristiche di prestigio",
-        content:'',
+        content:<CaratPrestigio/>
       },
       {
         name: "Unità abitative annesse",
-        content:'',
+        content:<CaratAnnessioni/>
       }
 ]

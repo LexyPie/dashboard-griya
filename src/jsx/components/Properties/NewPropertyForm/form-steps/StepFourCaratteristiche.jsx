@@ -15,6 +15,7 @@ import SliderRatingSatisfaction from '../../../Forms/Element/SingleElements/Slid
 import VerticalTab from '../../../Forms/Element/SingleElements/VerticalTab';
 
 import { other_caratArray } from './partials/other-carat-componenents/other_caratObj';
+import TelephoneInput from '../../../Forms/Element/SingleElements/TelephoneInput';
 
 export default function StepFourCaratteristiche() {
 
@@ -106,6 +107,28 @@ export default function StepFourCaratteristiche() {
         { id: 'VA', name: 'In fase di valutazione' }
     ];
 
+    const terrenoCheckboxArray = [
+        { label: 'Urbanizzato', value: 'urbanizzato' },
+        { label: 'Recintato', value: 'recintato' },
+        { label: 'Irrigato', value: 'irrigato' },
+        { label: 'Lottizzato', value: 'lottizzato' },
+        { label: 'Zona archeologica', value: 'zona-archeologica' },
+        { label: 'Edificabile', value: 'edificabile' }
+    ];
+
+    const condominioArray = [
+        { id: '1', name: 'Caratteristico' },
+        { id: '2', name: 'Classico' },
+        { id: '3', name: "D'epoca" },
+        { id: '4', name: 'Elegante' },
+        { id: '5', name: 'Liberty' },
+        { id: '6', name: 'Mediocre' },
+        { id: '7', name: 'Moderno' },
+        { id: '8', name: 'Popolare' },
+        { id: '9', name: 'Rurale' },
+        { id: '10', name: 'Signorile' },
+        { id: '11', name: 'Standard' }
+    ];
 
     const [isTypeCarat, setTypeCarat] = useState({ tipologia: false, value: 0 });
 
@@ -285,10 +308,76 @@ export default function StepFourCaratteristiche() {
                     <h4 className="card-title">Altre caratteristiche</h4>
                 </div>
                 <div className="row card-body">
-                    <VerticalTab tabData={other_caratArray}/>
+                    <VerticalTab tabData={other_caratArray} />
+                </div>
+            </div>
+
+            {/* Terreno section */}
+            <div className='card'>
+                <div className="card-header">
+                    <h4 className="card-title">Terreno</h4>
+                </div>
+                <div className="row card-body">
+                    <div className="col-sm-2 px-4">
+                        <InputGroupSufx label="Misura del terreno" type="number" suffix="mq" />
+                    </div>
+                    <div className='col-sm-4 mt-2 mt-sm-0'>
+                        <TextInput label="Coltura" placeholder="" />
+                    </div>
+                    <div className='col-sm-6 mt-2 mt-sm-0'>
+                        {terrenoCheckboxArray.map((item, i) => (
+                            <CheckboxInlineInput key={i} label={item.label} value={item.value} />
+                        ))}
                     </div>
                 </div>
-            
+            </div>
+
+
+            {/* Condominio e Stabile section */}
+            <div className='card'>
+                <div className="card-header">
+                    <h4 className="card-title">Condominio/Stabile</h4>
+                </div>
+                <div className="row card-body">
+
+                    <div className="col-sm-6 px-4">
+                        <SelectInput label="Tipologia" options={condominioArray} defaultValue="" id="stabile" className="mb-3" />
+
+                        <div className='row form-group'>
+
+                            <div className="col-sm-6 px-4">
+                                <NumberInput label="Numero di piani" placeholder="" />
+                            </div>
+
+                            <div className='col-sm-6 mt-2 mt-sm-0'>
+                                <NumberInput label="Unità abitative" placeholder="" />
+                            </div>
+
+                        </div>
+
+                        <TextInput label="Aspetto esterno" placeholder="" />
+                    </div>
+
+                    <div className="col-sm-6 px-4">
+
+                        <TextInput label="Amministratore" placeholder="" />
+                        <TelephoneInput label="Telefono Amministratore" id="amministr-tel" name="telefono-amministratore" />
+                        <div className='row form-group'>
+                            <div className="col-sm-6 px-4">
+                                <InputGroupSufx label="Compenso" type="number" suffix="€" />
+                            </div>
+                            <div className="col-sm-6 px-4">
+                                <CheckboxInlineInput label="Rinnovato" value="rinnovo-amministratore" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
 
             {/* Finiture  section */}
             <div className='card'>
