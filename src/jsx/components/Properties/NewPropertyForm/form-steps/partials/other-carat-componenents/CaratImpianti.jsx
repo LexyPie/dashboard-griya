@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import DynamicCheckbox from './components/DynamicCheckbox'
+import DynamicCheckbox from '../../../../../Forms/Element/SingleElements/DynamicCheckbox'
 import TextAreaInput from '../../../../../Forms/Element/SingleElements/TextAreaInput'
 import SelectInput from '../../../../../Forms/Element/SingleElements/SelectInput'
 

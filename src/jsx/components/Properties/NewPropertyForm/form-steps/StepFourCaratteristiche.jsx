@@ -386,8 +386,8 @@ export default function StepFourCaratteristiche() {
                 </div>
                 <div className="row card-body">
                     {/* Column 1 */}
-                    <div className="col-sm-6 px-4 border border-top-0 border-right-0 border-bottom-0 border-2 border-primary">
-                        <div className='row form-group'>
+                    <div className="col-sm-6 px-4">
+                        <div className='row form-group px-4'>
                             <h5 className='text-uppercase'>Interni</h5>
                             <div className='col-6  mt-2 mt-sm-0'>
                                 <TextInput label="Pavimento zona giorno" placeholder="" />
@@ -416,8 +416,8 @@ export default function StepFourCaratteristiche() {
                         </div>
                     </div>
                     {/* Column 2 */}
-                    <div className="col-sm-6 px-4 mt-2 mt-sm-0 border border-top-0 border-right-0 border-bottom-0 border-2 border-primary">
-                        <div className='row form-group'>
+                    <div className="col-sm-6 px-4 mt-2 mt-sm-0">
+                        <div className='row form-group px-4'>
                             <h5 className='text-uppercase'>Esterno</h5>
                             <div className='col-6 mt-2 mt-sm-0'>
                                 <TextInput label="Facciata" placeholder="" />
@@ -441,7 +441,7 @@ export default function StepFourCaratteristiche() {
                     </div>
                 </div>
                 {/* Column 3 */}
-                <div className="col-sm-12 px-4 mt-2 mt-sm-0 border border-top-0 border-right-0 border-bottom-0 border-2 border-primary">
+                <div className="col-sm-12 px-4 mt-2 mt-sm-0">
                     <div className='row px-4 form-group'>
                         <div className='col-6 mt-2 mt-sm-0'>
                             <TextAreaInput label="Note" id="note-finiture" rows="12" />

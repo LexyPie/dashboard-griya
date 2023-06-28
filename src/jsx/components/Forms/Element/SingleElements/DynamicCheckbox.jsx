@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import CheckboxInlineInput from '../../../../../../Forms/Element/SingleElements/CheckboxInlineInput'
+import CheckboxInlineInput from './CheckboxInlineInput'
 
 
 export default function DynamicCheckbox({label, value, className, content}) {

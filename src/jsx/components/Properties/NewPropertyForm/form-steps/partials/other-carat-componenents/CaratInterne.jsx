@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import InputGroupSufx from '../../../../../Forms/Element/SingleElements/InputGroupSufx'
 import NumberInput from '../../../../../Forms/Element/SingleElements/NumberInput'
-import DynamicCheckbox from './components/DynamicCheckbox'
+import DynamicCheckbox from '../../../../../Forms/Element/SingleElements/DynamicCheckbox'
 import TextAreaInput from '../../../../../Forms/Element/SingleElements/TextAreaInput'
 import SelectInput from '../../../../../Forms/Element/SingleElements/SelectInput'
 
