@@ -14,7 +14,7 @@ export default function DynamicCheckbox({label, value, className, content}) {
         ))
     }
 
-    useEffect(()=>(console.log(isCheckboxChecked)),[isCheckboxChecked])
+    //useEffect(()=>(console.log(isCheckboxChecked)),[isCheckboxChecked])
 
   return (
     <>

@@ -9,6 +9,7 @@ import MultipleInput from '../../../Forms/Element/SingleElements/MultipleInput';
 import NumberInput from '../../../Forms/Element/SingleElements/NumberInput';
 import InputGroupSufx from '../../../Forms/Element/SingleElements/InputGroupSufx';
 import TextAreaInput from '../../../Forms/Element/SingleElements/TextAreaInput';
+import MultiSelectInput from '../../../Forms/Element/SingleElements/MultiSelectInput';
 
 import { Button } from 'react-bootstrap';
 import SliderVisitTime from '../../../Forms/Element/SingleElements/SliderVisitTime';
@@ -47,12 +48,12 @@ export default function StepOneDatiAgenzia() {
     ];
 
     const tagsArray = [
-        { value: 'per-studenti', name: 'Per studenti' },
-        { value: 'nuova-costruzione', name: 'Nuova costruzione' },
-        { value: 'immobile-di-prestigio', name: 'Immobile di prestigio' },
-        { value: 'location-commerciale', name: 'Location commerciale' },
-        { value: 'adatto-investimento', name: 'per investimento' },
-        { value: 'nuova-costruzione', name: 'per casa vacanze' }
+        { value: 'per-studenti', label: 'Per studenti' },
+        { value: 'nuova-costruzione', label: 'Nuova costruzione' },
+        { value: 'immobile-di-prestigio', label: 'Immobile di prestigio' },
+        { value: 'location-commerciale', label: 'Location commerciale' },
+        { value: 'adatto-investimento', label: 'per investimento' },
+        { value: 'per-casa-vacanze', label: 'per casa vacanze' }
     ];
 
     const conoscenzaArray = [
@@ -222,7 +223,7 @@ export default function StepOneDatiAgenzia() {
                     </div>
                     <div className="col-sm-6 px-4">
                         <TextInput label="Luogo degli appuntamenti" placeholder="inserire indirizzo o luogo" />
-                        <TextInput label="Chiavi" placeholder="chiavi" />
+                        <TextInput label="Chiavi" placeholder="" />
                     </div>
 
                     <div className="col-sm-12 px-4">
@@ -234,6 +235,8 @@ export default function StepOneDatiAgenzia() {
                     </div>
                 </div>
             </div>
+
+
             {/* Disponibilità e visite section */}
             <div className='card'>
                 <div className="card-header">
@@ -241,10 +244,14 @@ export default function StepOneDatiAgenzia() {
                 </div>
                 <div className="row card-body">
                     <div className="col-sm-12 px-4">
-                        <BadgeCheckboxInput option={tagsArray} />
+                        {tagsArray.map((item,i) => (
+                        <BadgeCheckboxInput key={i} label={item.label} value={item.value} />
+                        ))}
                     </div>
                 </div>
             </div>
+
+
             {/* Altre info section */}
             <div className='card'>
                 <div className="card-header">
@@ -270,7 +277,7 @@ export default function StepOneDatiAgenzia() {
             {/* Note agenzia section */}
             <div className='card'>
                 <div className="card-header">
-                    <h4 className="card-title">Altre informazioni</h4>
+                    <h4 className="card-title">Note agenzia</h4>
                 </div>
                 <div className="row card-body">
                 <div className="col-sm-12 px-4">
