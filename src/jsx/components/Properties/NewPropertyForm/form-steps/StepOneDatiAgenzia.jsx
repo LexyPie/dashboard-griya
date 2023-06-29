@@ -60,7 +60,7 @@ export default function StepOneDatiAgenzia() {
         { id: '1', name: 'Cartello in loco' },
         { id: '2', name: 'Cartello stradale' },
         { id: '3', name: 'Già Cliente Agenzia' },
-        { id: '4', name: 'Giornali/Riviste' },
+        {id: '4', name: 'Giornali/Riviste' },
         { id: '5', name: 'Internet' },
         { id: '6', name: 'Passaparola' },
         { id: '7', name: 'Radio' },

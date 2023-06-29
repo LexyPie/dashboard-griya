@@ -130,55 +130,101 @@ export default function StepFourCaratteristiche() {
         { id: '11', name: 'Standard' }
     ];
 
-    const [isTypeCarat, setTypeCarat] = useState({ tipologia: false, value: 0 });
 
-    const [isSubTypeCarat, setSubTypeCarat] = useState([{ id: '00', name: 'Nessuna opzione' }]);
+    const [isTypeSelected, setIsTypeSelected] = useState({ selected: false, value: 0 });
 
-    const handleTypeCaratChange = (event) => {
-        setTypeCarat((prevState) => (
+    const [isSubTypeCarat, setSubTypeCarat] = useState([]);
+
+    
+
+    const subCatChosen = [{ id: '0', name: 'hello world 000' }];
+
+    function switchType(isTypeSelected) {
+        switch (isTypeSelected.value) {
+            case '1':
+                return subCatChosen = [{ id: '88', name: 'hello world' }];
+            case '2':
+                return subCatChosen = [{ id: '88', name: 'hello world 2' }]
+            case '3':
+                return subCatChosen = [{ id: '88', name: 'hello world 3' }]
+            case '4':
+                return subCatChosen = [{ id: '88', name: 'hello world 4' }]
+        }
+    }
+
+    const handleIsTypeSelected = (event) => {
+
+        setIsTypeSelected((prevState) => (
             {
                 ...prevState,
-                tipologia: event.target.selected,
+                selected: event.target.id,
                 value: event.target.value
             }
         ))
-    }
-    /* work in progess / conditional select for subcat */
-    const handleSubTypeCaratChange = (changedValue) => {
-        console.log('è entrato nell handle');
-        switch (changedValue) {
-            case 1:
-                return setSubTypeCarat(subtipologiaAppartamentoArray)
-            case 2:
-                return console.log('è entrato nell case2');
-            case 3:
-                return setSubTypeCarat(subtipologiaSemindipendenteArray)
-            case 4:
-                return setSubTypeCarat(subtipologiaStanzaArray)
+
+        setSubTypeCarat(subCatChosen);
+
         }
 
-        /*     setSubTypeCarat(()=>{
-                switch(changedValue) {
-                    case 1:
-                    return subtipologiaSemindipendenteArray
-                    case 2:
-                    return console.log('è entrato nell case2')
-                    case 3:
-                    return setTypeCarat(subtipologiaSemindipendenteArray)
-                    case 4:
-                    return setTypeCarat(subtipologiaStanzaArray)
-                }
-            }) */
-
-
-    }
+        function switchType(isTypeSelected) {
+            switch (isTypeSelected.value) {
+                case '1':
+                    return subCatChosen = [{ id: '88', name: 'hello world' }];
+                case '2':
+                    return subCatChosen = [{ id: '88', name: 'hello world 2' }]
+                case '3':
+                    return subCatChosen = [{ id: '88', name: 'hello world 3' }]
+                case '4':
+                    return subCatChosen = [{ id: '88', name: 'hello world 4' }]
+            }
+        }
 
     useEffect(() => {
-        console.log(isTypeCarat.value);
-        handleSubTypeCaratChange(isTypeCarat.value);
-    }, [isTypeCarat]);
-
+        console.log(isTypeSelected);
+        /* switchType(); */
+    }
+        , [isTypeSelected])
     useEffect(() => console.log(isSubTypeCarat), [isSubTypeCarat]);
+
+
+
+
+
+    /* work in progess / conditional select for subcat */
+    /*     const handleSubTypeCaratChange = (changedValue) => {
+            console.log('è entrato nell handle');
+            switch (changedValue) {
+                case 1:
+                    return setSubTypeCarat(subtipologiaAppartamentoArray)
+                case 2:
+                    return console.log('è entrato nell case2');
+                case 3:
+                    return setSubTypeCarat(subtipologiaSemindipendenteArray)
+                case 4:
+                    return setSubTypeCarat(subtipologiaStanzaArray)
+            } */
+
+    /*     setSubTypeCarat(()=>{
+            switch(changedValue) {
+                case 1:
+                return subtipologiaSemindipendenteArray
+                case 2:
+                return console.log('è entrato nell case2')
+                case 3:
+                return setTypeCarat(subtipologiaSemindipendenteArray)
+                case 4:
+                return setTypeCarat(subtipologiaStanzaArray)
+            }
+        }) 
+
+
+}*/
+    /* 
+        useEffect(() => {
+            console.log(isTypeCarat);
+            handleSubTypeCaratChange(isTypeCarat.value);
+        }, [isTypeCarat]);*/
+
 
 
     return (
@@ -193,7 +239,7 @@ export default function StepFourCaratteristiche() {
                     <div className="col-sm-6 px-4">
                         <div className='row form-group'>
                             <div className='col-6  mt-2 mt-sm-0'>
-                                <SelectInput label="Tipologia" onChange={handleTypeCaratChange} options={tipologiaCaratArray} defaultValue="" id="tipologia" className="mb-3" />
+                                <SelectInput label="Tipologia" onChange={handleIsTypeSelected} options={tipologiaCaratArray} defaultValue="" id="tipologia" className="mb-3" />
                             </div>
                             <div className='col-6 mt-2 mt-sm-0'>
                                 <SelectInput label="Subtipologia" options={isSubTypeCarat} defaultValue="" id="subtipologia" className="mb-3" />

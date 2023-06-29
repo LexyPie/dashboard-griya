@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-export default function SelectInput({label,options,defaultValue,id,className,onChange}) {
+export default function SelectInput({label,options,defaultValue,id,className,onChange, onClick}) {
+
+
+
 
     return (
         <>
@@ -9,12 +12,13 @@ export default function SelectInput({label,options,defaultValue,id,className,onC
                 defaultValue={defaultValue}
                 className={`${className} form-control`}
                 id={id}
-                onChange={onChange}
+                onChange={onChange} 
+                
             >
                 <option value="">Scegli un'opzione...</option>
             {options.map((item, i) =>
                 (
-                    <option value={item.id} key={i}>{item.name}</option>
+                    <option value={item.id} name={item.name} key={i}>{item.name}</option>
                 ))}
                 
             </select>

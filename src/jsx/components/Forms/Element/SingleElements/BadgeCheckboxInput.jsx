@@ -15,7 +15,7 @@ export default function BadgeCheckboxInput({className, label, value }) {
       ))
   }
   
-  useEffect(()=>(console.log(isBadgeChecked)),[isBadgeChecked])
+  //useEffect(()=>(console.log(isBadgeChecked)),[isBadgeChecked])
 
   return (
     <>
