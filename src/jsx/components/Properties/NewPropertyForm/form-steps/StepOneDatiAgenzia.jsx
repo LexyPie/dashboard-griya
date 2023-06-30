@@ -12,8 +12,8 @@ import TextAreaInput from '../../../Forms/Element/SingleElements/TextAreaInput';
 import MultiSelectInput from '../../../Forms/Element/SingleElements/MultiSelectInput';
 
 import { Button } from 'react-bootstrap';
-import SliderVisitTime from '../../../Forms/Element/SingleElements/SliderVisitTime';
 import BadgeCheckboxInput from '../../../Forms/Element/SingleElements/BadgeCheckboxInput';
+import PropietarioImmobile from './partials/agency-data-components/PropietarioImmobile';
 
 export default function StepOneDatiAgenzia() {
 
@@ -60,7 +60,7 @@ export default function StepOneDatiAgenzia() {
         { id: '1', name: 'Cartello in loco' },
         { id: '2', name: 'Cartello stradale' },
         { id: '3', name: 'Già Cliente Agenzia' },
-        {id: '4', name: 'Giornali/Riviste' },
+        { id: '4', name: 'Giornali/Riviste' },
         { id: '5', name: 'Internet' },
         { id: '6', name: 'Passaparola' },
         { id: '7', name: 'Radio' },
@@ -77,6 +77,23 @@ export default function StepOneDatiAgenzia() {
         { id: '7', name: 'Telefono' },
         { id: '8', name: 'Altro' }
     ];
+
+
+    const [newOwnerComponent, setNewOwnerComponent] = useState([''])
+    const [ownerLimit, setOwnerLimit] = useState(['2', '3', '4', '5'])
+
+    function addOwner() {
+
+        if (ownerLimit.length > 0) {
+            setNewOwnerComponent([...newOwnerComponent, ownerLimit[0]])
+            ownerLimit.splice(0, 1)
+        } else {
+            alert("Non puoi aggiungere altri proprietari")
+        }
+    }
+
+    
+
 
     return (
         <>
@@ -170,35 +187,9 @@ export default function StepOneDatiAgenzia() {
                 </div>
                 <div className="row card-body">
                     <div className="col-sm-12 px-4">
-                        <div className="row align-items-end">
-                            <div className='col-4 mt-2 mt-sm-0'>
-                                {/* provare qui con soluzione multi select */}
-                                <SelectInput label="Proprietario" options={agentiArray} defaultValue="" id="proprietario" />
-                            </div>
-                            <div className='col-3 mt-2 mt-sm-0'>
-                                <div className="form-group mb-0 ">
-                                    <Button className="me-2" variant="secondary">
-                                        <span className="p-1/4 m-0 white">
-                                            <i className="fas fa-user-plus" />
-                                        </span>
-                                    </Button>
-                                    <Button className="me-2" variant="warning">
-                                        <span className="p-1/4 m-0 white">
-                                            <i className="fas fa-user-edit" />
-                                        </span>
-                                    </Button>
-                                    <Button disabled="disabled" className="me-2" variant="danger">
-                                        <span className="p-1/4 m-0 white">
-                                            <i className="fas fa-minus" />
-                                        </span>
-                                    </Button>
-                                </div>
-                            </div>
-                            <div className='col-3 mt-2 mt-sm-0'>
-                                <InputGroupSufx label="Percentuale possesso" placeholder="00.00" type="number" suffix="%" />
-                            </div>
-                        </div>
-                        <Button className="me-2 mt-3" variant="primary">
+{/*                         <PropietarioImmobile label="Proprietario" options={agentiArray} />
+ */}                        {newOwnerComponent.map((item, i) => (<PropietarioImmobile key={i} number={i} label={`Proprietario n.${item} con chiave ${i}`} options={agentiArray} />))}
+                        <Button onClick={addOwner} className="me-2 mt-3" variant="primary">
                             + Aggiungi proprietario
                         </Button>
                     </div>
@@ -244,8 +235,8 @@ export default function StepOneDatiAgenzia() {
                 </div>
                 <div className="row card-body">
                     <div className="col-sm-12 px-4">
-                        {tagsArray.map((item,i) => (
-                        <BadgeCheckboxInput key={i} label={item.label} value={item.value} />
+                        {tagsArray.map((item, i) => (
+                            <BadgeCheckboxInput key={i} label={item.label} value={item.value} />
                         ))}
                     </div>
                 </div>
@@ -280,7 +271,7 @@ export default function StepOneDatiAgenzia() {
                     <h4 className="card-title">Note agenzia</h4>
                 </div>
                 <div className="row card-body">
-                <div className="col-sm-12 px-4">
+                    <div className="col-sm-12 px-4">
                         <TextAreaInput rows="15" label="Note dell'agenzia" />
                     </div>
                 </div>
