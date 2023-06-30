@@ -15,7 +15,7 @@ export default function SelectInput({label,options,defaultValue,id,className,onC
                 onChange={onChange} 
                 
             >
-                <option value="">Scegli un'opzione...</option>
+                <option value="0">Scegli un'opzione...</option>
             {options.map((item, i) =>
                 (
                     <option value={item.id} name={item.name} key={i}>{item.name}</option>
