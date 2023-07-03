@@ -5,8 +5,11 @@ import InputGroupSufx from '../../../../../Forms/Element/SingleElements/InputGro
 import { Button } from 'react-bootstrap';
 
 export default function PropietarioImmobile(props) {
+
+    
+
     return (
-        <div className="row align-items-end mt-2" number={props.number}>
+        <div className="row align-items-end mt-2" key={props.key} number={props.number}>
             <div className='col-4 mt-2 mt-sm-0'>
                 <SelectInput label={props.label} options={props.options} defaultValue="" id="proprietario" />
             </div>
@@ -22,7 +25,7 @@ export default function PropietarioImmobile(props) {
                             <i className="fas fa-user-edit" />
                         </span>
                     </Button>
-                    <Button disabled={props.number !== 0 ? "" : "disabled" } className="me-2" variant="danger">
+                    <Button key={props.key} number={props.number} onClick={props.onClickDelete} disabled={props.number == '1' ? "disabled" : "" } className="me-2" variant="danger">
                         <span className="p-1/4 m-0 white">
                             <i className="fas fa-minus" />
                         </span>

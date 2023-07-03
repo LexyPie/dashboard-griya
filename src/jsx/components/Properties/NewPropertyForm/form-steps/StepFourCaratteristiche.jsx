@@ -133,8 +133,6 @@ export default function StepFourCaratteristiche() {
 
     const [isTypeSelected, setIsTypeSelected] = useState({ selected: false, value: 0 });
 
-    const [isSubTypeCarat, setSubTypeCarat] = useState([]);
-
 
     const handleIsTypeSelected = (event) => {
 

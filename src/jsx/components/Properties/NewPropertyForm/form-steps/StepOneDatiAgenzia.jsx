@@ -79,20 +79,48 @@ export default function StepOneDatiAgenzia() {
     ];
 
 
-    const [newOwnerComponent, setNewOwnerComponent] = useState([''])
+    const [ownerComponent, setOwnerComponent] = useState([1])
     const [ownerLimit, setOwnerLimit] = useState(['2', '3', '4', '5'])
 
-    function addOwner() {
+    /* function addOwner() {
 
         if (ownerLimit.length > 0) {
-            setNewOwnerComponent([...newOwnerComponent, ownerLimit[0]])
-            ownerLimit.splice(0, 1)
+            
+            setOwnerComponent([...ownerComponent, ownerLimit[0]])
+            ownerLimit.shift(ownerLimit[0])
+
+            console.log(`add ${ownerLimit}`)
+        } else {
+            alert("Non puoi aggiungere altri proprietari")
+        }
+    } */
+    console.log(`array lenght ${ownerComponent.length}`)
+
+    function addOwner() {
+        
+        let currentValue = ownerComponent.length
+        if (currentValue >= 1 && currentValue < 5) {
+            setOwnerComponent((prevOwnerComponent) => [...prevOwnerComponent, currentValue + 1])
+            console.log(`currentValue add ${currentValue}`)    
         } else {
             alert("Non puoi aggiungere altri proprietari")
         }
     }
 
+    function deleteOwner(event) {
+        let currentValue = ownerComponent.length
+        if (currentValue > 1) {
+            ownerComponent.shift(event.target.getAttribute('number'))
+            setOwnerComponent([...ownerComponent])
+            console.log(`currentValue delete ${currentValue}`)    
+        } else {
+            alert("Non puoi eliminare altri proprietari")
+        }
+
+    }
+  
     
+    useEffect(()=> console.log(ownerComponent),[ownerComponent]);
 
 
     return (
@@ -187,8 +215,14 @@ export default function StepOneDatiAgenzia() {
                 </div>
                 <div className="row card-body">
                     <div className="col-sm-12 px-4">
-{/*                         <PropietarioImmobile label="Proprietario" options={agentiArray} />
- */}                        {newOwnerComponent.map((item, i) => (<PropietarioImmobile key={i} number={i} label={`Proprietario n.${item} con chiave ${i}`} options={agentiArray} />))}
+                      {ownerComponent.map((item, i) => (
+                      <PropietarioImmobile key={i} 
+                      number={item} 
+                      label={`Proprietario n.${item} con chiave ${i}`} 
+                      options={agentiArray}
+                      onClickDelete={deleteOwner}
+                       />
+                      ))}
                         <Button onClick={addOwner} className="me-2 mt-3" variant="primary">
                             + Aggiungi proprietario
                         </Button>
