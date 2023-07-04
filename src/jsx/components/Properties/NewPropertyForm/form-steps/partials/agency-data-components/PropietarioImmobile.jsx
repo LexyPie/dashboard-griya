@@ -15,17 +15,17 @@ export default function PropietarioImmobile(props) {
             </div>
             <div className='col-3 mt-2 mt-sm-0'>
                 <div className="form-group mb-0 ">
-                    <Button className="me-2" variant="secondary">
+                    <Button className="btn btn-secondary light me-2" variant="">
                         <span className="p-1/4 m-0 white">
                             <i className="fas fa-user-plus" />
                         </span>
                     </Button>
-                    <Button className="me-2" variant="warning">
+                    <Button className="btn btn-warning light me-2" variant="">
                         <span className="p-1/4 m-0 white">
                             <i className="fas fa-user-edit" />
                         </span>
                     </Button>
-                    <Button key={props.key} number={props.number} onClick={props.onClickDelete} disabled={props.disabled} className="me-2" variant="danger">
+                    <Button key={props.key} number={props.number} onClick={props.onClickDelete} disabled={props.disabled} className=" btn btn-danger light me-2" variant="">
                         <span className="p-1/4 m-0 white">
                             <i className="fas fa-minus" />
                         </span>

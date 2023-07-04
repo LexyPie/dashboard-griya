@@ -9,7 +9,7 @@ import MultiSelectInput from '../../../Forms/Element/SingleElements/MultiSelectI
 import Datepicker from '../../../Forms/Element/SingleElements/Datepicker';
 import CheckboxInlineInput from '../../../Forms/Element/SingleElements/CheckboxInlineInput';
 
-import SurfaceCalculator from './SurfaceCalculator';
+import SurfaceCalculator from './partials/carat-components/SurfaceCalculator';
 import { Button, Accordion } from 'react-bootstrap';
 import SliderRatingSatisfaction from '../../../Forms/Element/SingleElements/SliderRatingSatisfaction';
 import VerticalTab from '../../../Forms/Element/SingleElements/VerticalTab';
@@ -177,6 +177,7 @@ export default function StepFourCaratteristiche() {
     //useEffect(() => console.log(isTypeSelected), [isTypeSelected])
     //useEffect(() => console.log(typeSelected), [typeSelected]);
 
+    
 
     return (
         <>
@@ -240,18 +241,12 @@ export default function StepFourCaratteristiche() {
                     <h4 className="card-title">Calcolo superfici</h4>
                 </div>
                 <div className="row card-body">
-                    <div className="col-sm-12 px-4">
+                    
                         <SurfaceCalculator />
-                    </div>
-                    <Button className="m-3 px-4" variant="primary">
-                        + Aggiungi altra superficie
-                    </Button>
+                    
                 </div>
 
-                <div className="col-sm-12 p-4 border border-1 border-top">
-                    <h5>Totale superficie principale: mq</h5>
-                    <h5>Totale superficie commerciale: mq</h5>
-                </div>
+                
 
             </div>
 

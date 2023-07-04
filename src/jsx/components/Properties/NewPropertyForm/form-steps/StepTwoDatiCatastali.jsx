@@ -18,7 +18,6 @@ export default function StepTwoDatiCatastali() {
         let currentValue = catastoComponent.length
         if (currentValue >= 1 && currentValue < 5) {
             setCatastoComponent((prevCatastoComponent) => [...prevCatastoComponent, currentValue + 1])
-            console.log(`currentValue add ${currentValue}`)    
         } else {
             alert("Non puoi aggiungere altre unità catastali")
         }
@@ -52,7 +51,7 @@ export default function StepTwoDatiCatastali() {
                     {catastoComponent.map((item,i) => (
                     <CatastoUnit key={i} onClick={deleteUnit}/>
                     ))}
-                    <Button  onClick={addUnit} className="m-3" variant="primary">
+                    <Button  onClick={addUnit} className="btn btn-primary light m-3" variant="primary">
                         + Aggiungi altra unità catastale
                     </Button>
                 </div>

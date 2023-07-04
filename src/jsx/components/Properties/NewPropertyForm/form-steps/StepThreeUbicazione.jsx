@@ -10,6 +10,10 @@ import WorldMap from '../../../PluginsMenu/JqvMap/WorldMap';
 import MultipleInputWithSelect from '../../../Forms/Element/SingleElements/MultipleInputWithSelect';
 import NumberInput from '../../../Forms/Element/SingleElements/NumberInput';
 import RadioInlineInput from '../../../Forms/Element/SingleElements/RadioInlineInput';
+import SearchInput from '../../../Forms/Element/SingleElements/SearchInput';
+
+import { comuniJson } from '../../../../../assets/comuni-it';
+import { Highlighter } from 'react-bootstrap-typeahead';
 
 
 export default function StepThreeUbicazione() {
@@ -82,7 +86,24 @@ export default function StepThreeUbicazione() {
                     <div className="col-sm-6 px-4">
                         <div className='row form-group'>
                             <div className='col-8 mt-2 mt-sm-0'>
-                                <SelectInput label="Comune, zona o sottozona" options={comuniArray} defaultValue="" id="comune" className="mb-3" />
+                                <SearchInput
+                                label="Comune, zona o sottozona"
+                                id="comuni"
+                                labelKey='city'
+                                options={comuniJson}
+                                placeholder="Digita il nome"
+                                className='w-100'
+                                renderMenuItemChildren = {
+                                    (option, { text }) => (
+                                        <>
+                                          <Highlighter search={text}>{option.city}</Highlighter>
+                                          <div>
+                                            <small className='text-light'>{option.admin_name}</small>
+                                          </div>
+                                        </>
+                                      )
+                                }
+                                />
                             </div>
                             <div className='col-4 mt-2 mt-sm-0'>
                                 <TextInput label="Cap" placeholder="" />

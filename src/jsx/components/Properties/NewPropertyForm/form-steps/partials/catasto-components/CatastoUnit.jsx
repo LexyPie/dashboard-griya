@@ -16,7 +16,7 @@ export default function CatastoUnit(props) {
         <>
             <div className="col-sm-12 d-flex justify-content-between align-items-center">
                 <h5 className='text-uppercase my-5 d-inline-flex'>Unità catastale</h5>
-                <Button  onClick={props.onClick} className="m-3" variant="danger">
+                <Button  onClick={props.onClick} className="btn btn-danger light m-3" variant="">
                 <span className="p-1/4 m-0 white">
                             <i className="fas fa-trash-alt" />
                         </span>

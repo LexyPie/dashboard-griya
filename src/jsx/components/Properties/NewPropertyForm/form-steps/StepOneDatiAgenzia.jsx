@@ -205,7 +205,7 @@ export default function StepOneDatiAgenzia() {
                       disabled={ownerComponent.length == 1 ? "disabled" : "" }
                        />
                       ))}
-                        <Button onClick={addOwner} className="me-2 mt-3" variant="primary">
+                        <Button onClick={addOwner} className="btn btn-primary light me-2 mt-3" variant="">
                             + Aggiungi proprietario
                         </Button>
                     </div>

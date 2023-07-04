@@ -20,7 +20,7 @@ export default function BadgeCheckboxInput({className, label, value }) {
   return (
     <>
       <div className="form-check form-check-inline">
-        <label className={isBadgeChecked.check ? 'badge-primary form-check-label badge badge-xl ' : 'badge-light form-check-label badge badge-xl'}>
+        <label className={isBadgeChecked.check ? 'badge-primary form-check-label badge badge-xl ' : 'badge-primary light text-muted form-check-label badge badge-xl'}>
             <input
               name={value}
               type="checkbox"
