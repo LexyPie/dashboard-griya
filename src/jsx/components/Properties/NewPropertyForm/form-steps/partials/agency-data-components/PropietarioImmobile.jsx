@@ -25,7 +25,7 @@ export default function PropietarioImmobile(props) {
                             <i className="fas fa-user-edit" />
                         </span>
                     </Button>
-                    <Button key={props.key} number={props.number} onClick={props.onClickDelete} disabled={props.number == '1' ? "disabled" : "" } className="me-2" variant="danger">
+                    <Button key={props.key} number={props.number} onClick={props.onClickDelete} disabled={props.disabled} className="me-2" variant="danger">
                         <span className="p-1/4 m-0 white">
                             <i className="fas fa-minus" />
                         </span>

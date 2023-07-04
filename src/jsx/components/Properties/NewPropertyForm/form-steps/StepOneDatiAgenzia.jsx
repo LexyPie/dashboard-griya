@@ -80,22 +80,7 @@ export default function StepOneDatiAgenzia() {
 
 
     const [ownerComponent, setOwnerComponent] = useState([1])
-    const [ownerLimit, setOwnerLimit] = useState(['2', '3', '4', '5'])
-
-    /* function addOwner() {
-
-        if (ownerLimit.length > 0) {
-            
-            setOwnerComponent([...ownerComponent, ownerLimit[0]])
-            ownerLimit.shift(ownerLimit[0])
-
-            console.log(`add ${ownerLimit}`)
-        } else {
-            alert("Non puoi aggiungere altri proprietari")
-        }
-    } */
-    console.log(`array lenght ${ownerComponent.length}`)
-
+    
     function addOwner() {
         
         let currentValue = ownerComponent.length
@@ -118,10 +103,6 @@ export default function StepOneDatiAgenzia() {
         }
 
     }
-  
-    
-    useEffect(()=> console.log(ownerComponent),[ownerComponent]);
-
 
     return (
         <>
@@ -218,9 +199,10 @@ export default function StepOneDatiAgenzia() {
                       {ownerComponent.map((item, i) => (
                       <PropietarioImmobile key={i} 
                       number={item} 
-                      label={`Proprietario n.${item} con chiave ${i}`} 
+                      label='Proprietario' 
                       options={agentiArray}
                       onClickDelete={deleteOwner}
+                      disabled={ownerComponent.length == 1 ? "disabled" : "" }
                        />
                       ))}
                         <Button onClick={addOwner} className="me-2 mt-3" variant="primary">
