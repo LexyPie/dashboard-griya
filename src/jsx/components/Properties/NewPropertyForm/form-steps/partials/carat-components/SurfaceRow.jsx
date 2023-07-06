@@ -4,7 +4,7 @@ import SelectInput from '../../../../../Forms/Element/SingleElements/SelectInput
 import InputGroupSufx from '../../../../../Forms/Element/SingleElements/InputGroupSufx';
 import { Button } from 'react-bootstrap';
 
-export default function SurfaceRow({id, onClickDelete}) {
+export default function SurfaceRow({id, onClickDelete, onChangeMqSup}) {
 
     const consistenzaArray = [
 
@@ -53,6 +53,9 @@ export default function SurfaceRow({id, onClickDelete}) {
         { id: '13', name: '10' }
     ];
 
+
+
+
     return (
         <>
             <div id={id} className="col-sm-12 px-4 mb-3 align-items-end">
@@ -60,16 +63,16 @@ export default function SurfaceRow({id, onClickDelete}) {
                 <div className='row form-group'>
 
                     <div className='col-2  mt-2 mt-sm-0'>
-                        <SelectInput label="Consistenza" onChange="" options={consistenzaArray} defaultValue="" id="consistenza-superfici" className="mb-3" />
+                        <SelectInput label="Consistenza" options={consistenzaArray} defaultValue="" id="consistenza-superfici" className="mb-3" />
                     </div>
                     <div className='col-1  mt-2 mt-sm-0'>
-                        <SelectInput label="Piano" onChange="" options={pianoImmobileArray} defaultValue="" id="piano-superfici" className="mb-3" />
+                        <SelectInput label="Piano" options={pianoImmobileArray} defaultValue="" id="piano-superfici" className="mb-3" />
                     </div>
                     <div className='col-2  mt-2 mt-sm-0'>
-                        <InputGroupSufx label="Metri quadri" type="number" suffix="mq" />
+                        <InputGroupSufx label="Metri quadri" name="mq_superficie" value="" onChange={onChangeMqSup} type="number" suffix="mq" />
                     </div>
                     <div className='col-2  mt-2 mt-sm-0'>
-                        <SelectInput label="Tipo di superficie" onChange="" options={[{ id: 1, name: 'Principale' }, { id: 2, name: 'Accessoria' }]} defaultValue="" id="piano-superfici" className="mb-3" />
+                        <SelectInput label="Tipo di superficie" options={[{ id: 1, name: 'Principale' }, { id: 2, name: 'Accessoria' }]} defaultValue="" id="piano-superfici" className="mb-3" />
                     </div>
                     <div className='col-2  mt-2 mt-sm-0'>
                         <InputGroupSufx label="% commerciale" type="number" suffix="%" />

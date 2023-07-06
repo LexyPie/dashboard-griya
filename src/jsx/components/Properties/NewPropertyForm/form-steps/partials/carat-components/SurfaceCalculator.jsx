@@ -33,15 +33,37 @@ export default function SurfaceCalculator() {
 
     }
 
+    let helloworld = 'hello world';
+
+    /* const [mqValues,setMqValues] = useState([{name:'mq_superficie', id:'0', value:'0'}])
+
+    const handleMqValues = (event) => {
+        setMqValues((prevState) => (
+            [
+                ...prevState,
+                {
+                    name:'mq_superficie',
+                    id:event.target.getAttribute('key'),
+                    value:event.target.value
+                }
+            ]
+        ))
+
+        console.log(mqValues)
+    } */
+
     return (
         <>
 
             {surfaceComponent.map((item, i) => (
 
                 <SurfaceRow
+
                     key={i}
                     id={item}
                     onClickDelete={deleteSurface}
+
+                    /* onChangeMqSup={handleMqValues} */
                 />
 
             ))}
@@ -50,7 +72,7 @@ export default function SurfaceCalculator() {
             </Button>
 
             <div className="col-sm-12 p-4 border border-1 border-top">
-                <h5>Totale superficie principale: mq</h5>
+                <h5>Totale superficie principale: <span className="text-primary">{helloworld}</span> mq</h5>
                 <h5>Totale superficie commerciale: mq</h5>
             </div>
         </>
