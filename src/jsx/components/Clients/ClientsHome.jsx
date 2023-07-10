@@ -76,7 +76,7 @@ export default function ClientsHome() {
 			<div className="row contacts-list-area">
 				<div className="col-xl-12">
 					<div className="d-flex flex-wrap">
-						<Link to={"#"} className="btn btn-primary me-3 mb-3">+New Tranasactions</Link>
+						<Link to={"/nuovo-cliente"} className="btn btn-primary me-3 mb-3">+ Nuovo cliente</Link>
 						<div className="table-search mb-3 pe-3">	
 							<div className="input-group search-area">
 								<input type="text" className="form-control" placeholder="Search customer name here" />

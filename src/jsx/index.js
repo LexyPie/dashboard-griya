@@ -11,8 +11,7 @@ import "./step.css";
 /// Layout
 import Nav from "./layouts/nav";
 import Footer from "./layouts/Footer";
-///Clients
-import ClientsHome from "./components/Clients/ClientsHome";
+
 /// Dashboard
 import Home from "./components/Dashboard/Home";
 import DashboardDark from "./components/Dashboard/DashboardDark";
@@ -117,10 +116,16 @@ import Error503 from "./pages/Error503";
 import Setting from "./layouts/Setting";
 import { ThemeContext } from "../context/ThemeContext";
 
+//NEW PAGES
+
+///Clients
+import ClientsHome from "./components/Clients/ClientsHome";
 import Inquiries from "./components/Clients/Inquiries";
 import Buyers from "./components/Clients/Buyers";
 import Sellers from "./components/Clients/Sellers";
+import NewClientForm from "./components/Clients/NewClientForm/NewClientForm";
 
+///Properties
 import PropertiesHome from "./components/Properties/PropertiesHome";
 import Selling from "./components/Properties/Selling";
 import Renting from "./components/Properties/Renting";
@@ -128,6 +133,8 @@ import CrossCheck from "./components/Properties/CrossCheck";
 import Deals from "./components/Properties/Deals";
 import NewPropertyForm from "./components/Properties/NewPropertyForm/NewPropertyForm";
 
+
+///Agency
 import AgencyHome from "./components/Agency/AgencyHome";
 import AgencyLog from "./components/Agency/AgencyLog";
 import Agents from "./components/Agency/Agents";
@@ -144,6 +151,8 @@ const Markup = () => {
     { url: "richieste", component: <Inquiries/> },
     { url: "acquirenti", component: <Buyers/> },
     { url: "venditori", component: <Sellers/> },
+    { url: "nuovo-cliente", component: <NewClientForm/> },
+
     ///Properties
     { url: "immobili", component: <PropertiesHome/> },
     { url: "vendita", component: <Selling/> },
@@ -151,11 +160,13 @@ const Markup = () => {
     { url: "incrocia", component: <CrossCheck/> },
     { url: "trattative", component: <Deals/> },
     { url: "nuovo-immobile", component: <NewPropertyForm/> },
+    
     ///Agency
     { url: "agenzia", component: <AgencyHome/> },
     { url: "storico", component: <AgencyLog/> },
     { url: "agenti", component: <Agents/> },
     { url: "collaboratori", component: <Partners/> },
+
     /// Dashboard
     { url: "", component: <Home /> },
     { url: "dashboard", component: <Home/> },
