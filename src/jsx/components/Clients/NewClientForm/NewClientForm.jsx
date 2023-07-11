@@ -12,8 +12,14 @@ import TelephoneInput from '../../Forms/Element/SingleElements/TelephoneInput'
 import EmailInput from '../../Forms/Element/SingleElements/EmailInput'
 import BadgeCheckboxInput from '../../Forms/Element/SingleElements/BadgeCheckboxInput'
 import CheckboxInlineInput from '../../Forms/Element/SingleElements/CheckboxInlineInput'
+import TextAreaInput from '../../Forms/Element/SingleElements/TextAreaInput'
 
 export default function NewClientForm() {
+
+    const agenziaArray = [{ id: '1', name: 'sede A' }, { id: '2', name: 'sede B' }, { id: '3', name: 'sede C' }];
+    const agentiArray = [{ id: '1', name: 'Pippo' }, { id: '2', name: 'Paperino' }, { id: '3', name: 'Pluto' }];
+    const collaboratoriArray = [{ id: '1', name: 'Andrea' }, { id: '2', name: 'Luca' }, { id: '3', name: 'Alessia' }];
+
 
     const titoloArray = [
         { id: "1", name: "Sig." },
@@ -36,7 +42,13 @@ export default function NewClientForm() {
         { value: 'telefono-fisso', label: 'Telefono fisso' },
         { value: 'cellulare', label: 'Cellulare' },
         { value: 'whatsapp', label: 'Whatsapp' }
-        ];
+    ];
+
+    const tipologiaClienteArray = [
+        { value: 'acquirente-locatario', label: 'Acquirente/Locatario' },
+        { value: 'venditore', label: 'Venditore' },
+        { value: 'altro', label: 'Altro' }
+    ];
 
     return (
         <>
@@ -127,13 +139,52 @@ export default function NewClientForm() {
                                 {contattoArray.map((item, i) => (
                                     <BadgeCheckboxInput key={i} label={item.label} value={item.value} />
                                 ))}
-                                <div className="form-group mt-5">
-                                    <CheckboxInlineInput label="Non mandare SMS" value="no-sms"/>
-                                    <CheckboxInlineInput label="Non inviare incroci automatici" value="no-invio-incroci"/>
-                                    <CheckboxInlineInput label="Non visualizzare nella lista contatti" value="no-lista-contatti"/>
-
+                                <div className="form-group my-5">
+                                    <CheckboxInlineInput label="Non mandare SMS" value="no-sms" />
+                                    <CheckboxInlineInput label="Non inviare incroci automatici" value="no-invio-incroci" />
+                                    <CheckboxInlineInput label="Non visualizzare nella lista contatti" value="no-lista-contatti" />
                                 </div>
+                                <TextAreaInput label="Note" className="" />
                             </div>
+                        </div>
+                    </div>
+
+                    {/* Agenzia section */}
+                    <div className='card'>
+                        <div className="card-header">
+                            <h4 className="card-title">Dati per l'agenzia</h4>
+                        </div>
+                        <div className="row card-body">
+
+                            <div className="col-sm-6 mt-2 mt-sm-0 px-4">
+                                <SelectInput label="Agenzia" options={agenziaArray} defaultValue="" id="agenzia" className="mb-3" />
+                                <SelectInput label="Agente" options={agentiArray} defaultValue="" id="agente" className="mb-3" />
+                                <SelectInput label="Collaboratore" options={collaboratoriArray} defaultValue="" id="collaboratore" className="mb-3" />
+                            </div>
+
+                            <div className="col-sm-6 mt-2 mt-sm-0 px-4">
+                                <h5 className="mb-3">Categorizzazione dati cliente</h5>
+
+                                {tipologiaClienteArray.map((item, i) => (
+                                    <BadgeCheckboxInput key={i} label={item.label} value={item.value} />
+                                ))}
+
+                                <div className="form-group my-3">
+                                    <CheckboxInlineInput className="custom-checkbox checkbox-danger check-lg" label="Cliente non gradito" value="no-gradito" />
+                                    <CheckboxInlineInput className="custom-checkbox checkbox-success check-lg" label="Cliente con referenze" value="si-referenze" />
+                                </div>
+
+                                <div className="form-group my-5">
+                                    <h5 className="mb-3">Trattamento dati cliente</h5>
+                                    <CheckboxInlineInput label="Privacy Policy" value="si-privacy-policy" />
+                                    <CheckboxInlineInput label="Attività di marketing" value="si-marketing" />
+                                    <CheckboxInlineInput label="Analisi e attività di profilazione" value="si-profilazione" />
+                                    <CheckboxInlineInput label="Fascicolo antiriciclaggio" value="si-fascicolo-antiriciclaggio" />
+                                </div>
+
+                            </div>
+
+
                         </div>
                     </div>
 
