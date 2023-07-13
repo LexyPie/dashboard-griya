@@ -6,20 +6,20 @@ import { Stepper, Step } from 'react-form-stepper';
 import StepZeroCliente from './form-steps/StepZeroCliente'
 import StepOneAnagraficaRecapiti from './form-steps/StepOneAnagraficaRecapiti';
 
-export const ClientContext = createContext('contesto')
+export const ClientContext = createContext('')
 
 export default function NewClientForm() {
 
     const [goSteps, setGoSteps] = useState(0);
 
-    const [isClient, setIsClient] = useState("nessuno");
+    const [isClient, setIsClient] = useState("");
 
     console.log(isClient);   
 
     const handleSetIsClient = (event) => {
         setIsClient(event.currentTarget.id)
-        console.log("set");     
-        console.log(isClient);
+/*         console.log("set");     
+        console.log(isClient); */
         setGoSteps(1)     
     }
     
@@ -42,7 +42,7 @@ export default function NewClientForm() {
                         </Stepper>
                         {goSteps === 0 && (
                             <>
-                                <StepZeroCliente onClick={handleSetIsClient/* () => setGoSteps(1) */} />
+                                <StepZeroCliente onClick={handleSetIsClient} />
                             </>
                         )}
 
