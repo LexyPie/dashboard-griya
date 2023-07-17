@@ -56,17 +56,12 @@ const clientType = useContext(ClientContext);
 
   return (
     <>
-            <PageTitle activeMenu="Nuovo cliente" motherMenu="Clienti" />
 
-            <div className="basic-form">
-                <form onSubmit={(e) => e.preventDefault()}>
                     {/* Anagrafica section */}
                     <div className='card'>
                         <div className="card-header">
                             <h4 className="card-title">Anagrafica</h4>
-                            {clientType == 'persona' ? 
-                            <h3>hello world</h3> 
-                            : <h3>fail</h3>}
+                            <h4>{clientType}</h4>
                      </div>
                         <div className="row card-body">
                             <div className="col-sm-12 px-4">
@@ -136,8 +131,11 @@ const clientType = useContext(ClientContext);
                         <div className="row card-body">
                             <div className="col-sm-6 px-4">
                                 <TelephoneInput label="Telefono fisso " />
+                                {clientType == 'azienda' ? <TelephoneInput label="Telefono fisso alternativo" /> : null}
                                 <TelephoneInput label="Cellulare" />
+                                {clientType == 'azienda' ? <TelephoneInput label="Cellulare alternativo" /> : null}
                                 <EmailInput label="Email" />
+                                {clientType == 'azienda' ? <EmailInput label="Email alternativa" /> : null}
                                 <EmailInput label="Pec" />
                             </div>
                             <div className="col-sm-6 px-4">
@@ -195,8 +193,6 @@ const clientType = useContext(ClientContext);
                         </div>
                     </div>
 
-                </form>
-            </div>
         </>
   )
 }

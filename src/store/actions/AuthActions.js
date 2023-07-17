@@ -51,7 +51,7 @@ export function loginAction(email, password, navigate) {
                 saveTokenInLocalStorage(response.data);
                 runLogoutTimer(
                     dispatch,
-                    response.data.expiresIn * 1000,
+                    response.data.expiresIn * 5000,
                     navigate,
                 );
                 dispatch(loginConfirmedAction(response.data));

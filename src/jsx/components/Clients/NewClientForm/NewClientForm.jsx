@@ -45,7 +45,6 @@ export default function NewClientForm() {
                                 <StepZeroCliente onClick={handleSetIsClient} />
                             </>
                         )}
-
                         
                         {goSteps === 1 && (
                             <>                           
